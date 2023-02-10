@@ -1,0 +1,58 @@
+name:                Yaml-Parser
+version:             0.1.0.0
+github:              "domanteli0/Yaml-Parser"
+license:             AGPL-3
+author:              "Domantas Keturakis"
+maintainer:          "domantelio@proton.me"
+copyright:           "2023 Domantas Keturakis"
+
+extra-source-files:
+- README.md
+# - CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+# description:         Please see the README on GitHub at <https://github.com/githubuser/Yaml-Parser#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+tests:
+  Yaml-Parser-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Yaml-Parser
+    - string-conversions
+    - tasty
+    - tasty-hunit
+    - tasty-quickcheck
+    - yaml
+    - QuickCheck
+    - aeson
+    - scientific
+    - vector
+    - unordered-containers
